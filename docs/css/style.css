@@ -293,7 +293,6 @@ main {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  /**********************/
   margin-bottom: 0px;
 }
 @media screen and (min-width: 45rem) {
@@ -303,14 +302,12 @@ main {
 }
 .home .intro {
   padding: 0px 16px;
-  /**********************/
   margin-bottom: 46px;
 }
 @media screen and (min-width: 45rem) {
   .home .intro {
     padding: 0px 39px;
     padding-right: 0px;
-    /**********************/
     margin-bottom: 123px;
     width: 438px;
   }
@@ -319,7 +316,6 @@ main {
   .home .intro {
     padding: 0px 165px;
     padding-right: 0px;
-    /**********************/
     margin-bottom: 266px;
     width: 622px;
   }
@@ -355,9 +351,13 @@ main {
     align-self: initial;
     background-image: url("../images/image-hero-tablet.webp");
     height: 640px;
-    min-width: 640px;
-    background-size: 100% 100%;
+    min-width: 47.5%;
+    background-size: initial;
     background-position: initial;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center left;
+       object-position: center left;
     position: absolute;
     top: -75px;
     left: 52.5%;
@@ -369,9 +369,13 @@ main {
     align-self: initial;
     background-image: url("../images/image-hero-desktop.webp");
     height: 937px;
-    min-width: 992px;
-    background-size: 100% 100%;
+    min-width: 46.9%;
+    background-size: initial;
     background-position: initial;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center left;
+       object-position: center left;
     position: absolute;
     top: -160px;
     left: 52.5%;
@@ -500,6 +504,9 @@ main {
   color: #f74780;
   font-weight: 700;
   margin-bottom: 32px;
+}
+.courses-list .course .cta-title:hover {
+  color: #fa90b3;
 }
 @media screen and (min-width: 68.75rem) {
   .courses-list .course .cta-title {

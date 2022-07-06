@@ -164,8 +164,7 @@ main {
     display: flex;
     flex-direction: column;
     background-color: $clr-neu-1;
-    // padding: pxl(0) pxl(16);
-    /**********************/
+
     margin-bottom: pxl(0);
 
     @include min-width($dw-tablet) {
@@ -174,20 +173,17 @@ main {
 
     .intro {
         padding: pxl(0) pxl(16);
-        /**********************/
         margin-bottom: pxl(46);
         
         @include min-width($dw-tablet) {
             padding: pxl(0) pxl(39);
             padding-right: pxl(0);
-            /**********************/
             margin-bottom: pxl(123);
             width: pxl(438);
         }
         @include min-width($dw-desktop) {
             padding: pxl(0) pxl(165);
             padding-right: pxl(0);
-            /**********************/
             margin-bottom: pxl(266);
             width: pxl(622);
         }
@@ -219,9 +215,11 @@ main {
             align-self: initial;
             background-image: url('../images/image-hero-tablet.webp');
             height: pxl(640);
-            min-width: pxl(640);
-            background-size: 100% 100%;
+            min-width: 47.5%;//pxl(365)
+            background-size: initial;
             background-position: initial;
+            object-fit: cover;
+            object-position: center left;
             position: absolute;
             top: pxl(-75);
             left: 52.5%;
@@ -231,9 +229,11 @@ main {
             align-self: initial;
             background-image: url('../images/image-hero-desktop.webp');
             height: pxl(937);
-            min-width: pxl(992);
-            background-size: 100% 100%;
+            min-width: 46.9%;//pxl(676)
+            background-size: initial;
             background-position: initial;
+            object-fit: cover;
+            object-position: center left;
             position: absolute;
             top: pxl(-160);
             left: 52.5%;
@@ -339,8 +339,8 @@ main {
                     color: $clr-sec-1;
                     font-weight: 700;
                     margin-bottom: pxl(32);
-                    @include min-width($dw-tablet){
-                        
+                    &:hover {
+                        color: lighten($clr-sec-1, 15%);
                     }
                     @include min-width($dw-desktop){
                         margin-bottom: pxl(36);
