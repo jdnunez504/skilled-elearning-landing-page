@@ -2,8 +2,11 @@
 @import 'variables';
 
 body {
-    background-color: #ccc;
+    background-color: $clr-neu-1;
     font-family: $ff;
+    @include min-width($dw-desktop) {
+        display: flex;
+    }
 }
 
 h1 {
@@ -52,12 +55,20 @@ p {
 main {
     padding: pxl(0);
     background-color: $clr-neu-1;
+    @include min-width($dw-desktop) {
+        margin: 0 auto;
+        max-width: pxl(1440);
+    }
 }
 
 .Btn {
     display: inline-block;
     padding: pxl(11) pxl(25);
-    border-radius: pxl(30);
+    border-radius: pxl(36);
+    z-index: 1;
+    @include min-width($dw-desktop) {
+            padding: pxl(14) pxl(33);
+        }
     &-title{
         color: $clr-neu-1;
     }
@@ -67,17 +78,24 @@ main {
     &--home {
         background-image: $clr-pri-grd;
         padding: pxl(15) pxl(38.5);
+        @include min-width($dw-desktop) {
+            padding: pxl(17.5) pxl(33);
+        }
     }
     &--footer {
         background-image: $clr-sec-grd;
     }
 }
+
 .icon {
     height: pxl(56);
     width: pxl(56);
     background-size: cover;
     margin-top: pxl(-26);
     margin-bottom: pxl(24);
+    @include min-width($dw-desktop) {
+        margin-bottom: pxl(32);
+    }
     &1 {
         background-image: url('../images/icon-animation.svg');
     }
@@ -104,6 +122,20 @@ main {
     justify-content: space-between;
     /**********************/
     margin-bottom: pxl(38);
+
+    @include min-width($dw-tablet) {
+        padding-top: pxl(24);
+        padding-left: pxl(39);
+        padding-right: pxl(39);
+        margin-bottom: pxl(99);
+    }
+    @include min-width($dw-desktop) {
+        padding-top: pxl(24);
+        padding-left: pxl(165);
+        padding-right: pxl(165);
+        margin-bottom: pxl(172);
+    }
+
     .logo {
         //
         &--header {
@@ -120,50 +152,152 @@ main {
     /**********************/
     margin-bottom: pxl(0);
 
+    @include min-width($dw-tablet) {
+        flex-direction: row;
+    }
+
     .intro {
         padding: pxl(0) pxl(16);
         /**********************/
         margin-bottom: pxl(46);
+        
+        @include min-width($dw-tablet) {
+            padding: pxl(0) pxl(39);
+            padding-right: pxl(0);
+            /**********************/
+            margin-bottom: pxl(123);
+            width: pxl(438);
+        }
+        @include min-width($dw-desktop) {
+            padding: pxl(0) pxl(165);
+            padding-right: pxl(0);
+            /**********************/
+            margin-bottom: pxl(266);
+            width: pxl(622);
+        }
 
         &-title {
             color: $clr-pri-1;
             margin-bottom: pxl(26);
+            @include min-width($dw-desktop) {
+                margin-bottom: pxl(29);
+            }
         }
         &-text {
             color: $clr-neu-2;
             margin-bottom: pxl(24);
+            @include min-width($dw-desktop) {
+                margin-bottom: pxl(40);
+            }
         }
     }
     
     .hero-img {
         align-self: center;
         height: pxl(367);
-        width: pxl(375);
+        min-width: pxl(375);
         background-image: url('../images/image-hero-mobile.webp');
         background-size: 115% 115%;
         background-position: center center;
+        @include min-width($dw-tablet) {
+            align-self: initial;
+            background-image: url('../images/image-hero-tablet.webp');
+            height: pxl(640);
+            min-width: pxl(640);
+            background-size: 100% 100%;
+            background-position: initial;
+            position: absolute;
+            top: pxl(-75);
+            left: 52.5%;
+            z-index: 0;
+        }
+        @include min-width($dw-desktop) {
+            align-self: initial;
+            background-image: url('../images/image-hero-desktop.webp');
+            height: pxl(937);
+            min-width: pxl(992);
+            background-size: 100% 100%;
+            background-position: initial;
+            position: absolute;
+            top: pxl(-160);
+            left: 52.5%;
+            z-index: 0;
+        }
     }
 }
 
 .courses {
     background-image: $clr-neut-grd;
     padding: pxl(0) pxl(16);
+    @include min-width($dw-tablet) {
+        padding-left: pxl(39);
+        padding-right: pxl(39);
+    }
+    @include min-width($dw-desktop) {
+        padding-left: pxl(165);
+        padding-right: pxl(165);
+    }
+    
     &-list {
         display: grid;
         gap: pxl(40);
+        @include min-width($dw-tablet) {
+            grid-template-columns: 1fr 1fr;
+            gap: pxl(56) pxl(11);
+        }
+        @include min-width($dw-desktop) {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: pxl(80) pxl(30);
+        }
+
         .course {
             background-color: $clr-neu-1;
             padding-top: pxl(0);
             padding-left: pxl(28);
             padding-right: pxl(28);
-            padding-bottom: pxl(32);
+            padding-bottom: pxl(64);
             border-radius: pxl(10);
+            position: relative;
+            @include min-width($dw-desktop) {
+                padding-top: pxl(0);
+                padding-left: pxl(32);
+                padding-right: pxl(32);
+                padding-bottom: pxl(72);
+                border-radius: pxl(15);
+            }
+            &:nth-of-type(4) {
+                @include min-width($dw-desktop) {
+                    margin-bottom: pxl(140);
+                }
+            }
+            &:nth-of-type(5) {
+                @include min-width($dw-tablet) {
+                    margin-bottom: pxl(86);
+                }
+                @include min-width($dw-desktop) {
+                    margin-bottom: pxl(140);
+                }
+            }
+            
             &:last-of-type {
                 margin-bottom: pxl(80);
+                @include min-width($dw-tablet) {
+                    margin-bottom: pxl(86);
+                }
+                @include min-width($dw-desktop) {
+                    margin-bottom: pxl(140);
+                }
             }
+            
             &--cta {
                 background-image: $clr-pri-grd;
                 padding: pxl(28) pxl(30.5);
+                @include min-width($dw-tablet) {
+                    padding: pxl(56) pxl(32);
+                }
+                @include min-width($dw-desktop) {
+                    padding-top: pxl(64);
+                }
                 &-title {
                     color: $clr-neu-1;
                 }
@@ -171,15 +305,31 @@ main {
             &-title {
                 color: $clr-pri-1;
                 margin-bottom: pxl(18);
+                @include min-width($dw-desktop) {
+                    margin-bottom: pxl(24);
+                }
             }
             &-details {
                 color: $clr-neu-2;
                 margin-bottom: pxl(24);
+                @include min-width($dw-desktop) {
+                    margin-bottom: pxl(24);
+                }
             }
             .cta {
+                position: absolute;
+                bottom: pxl(0);
                 &-title {
                     color: $clr-sec-1;
                     font-weight: 700;
+                    margin-bottom: pxl(32);
+                    @include min-width($dw-tablet){
+                        
+                    }
+                    @include min-width($dw-desktop){
+                        margin-bottom: pxl(36);
+                    }
+                    
                 }
             }
         }
@@ -195,4 +345,12 @@ main {
     padding-bottom: pxl(36);
     padding-left: pxl(16);
     padding-right: pxl(16);
+    @include min-width($dw-tablet) {
+        padding-left: pxl(39);
+        padding-right: pxl(39);
+    }
+    @include min-width($dw-desktop) {
+        padding-left: pxl(165);
+        padding-right: pxl(165);
+    }
 }
