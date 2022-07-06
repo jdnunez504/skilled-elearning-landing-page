@@ -1,5 +1,7 @@
+@use 'sass:color';
 @import 'reset';
 @import 'variables';
+
 
 body {
     background-color: $clr-neu-1;
@@ -58,6 +60,7 @@ main {
     @include min-width($dw-desktop) {
         margin: 0 auto;
         max-width: pxl(1440);
+        overflow: hidden;
     }
 }
 
@@ -65,7 +68,10 @@ main {
     display: inline-block;
     padding: pxl(11) pxl(25);
     border-radius: pxl(36);
+    cursor: pointer;
+    transition: all 0.5s;
     z-index: 1;
+    
     @include min-width($dw-desktop) {
             padding: pxl(14) pxl(33);
         }
@@ -74,16 +80,26 @@ main {
     }
     &--header {
         background-color: $clr-pri-1;
+        &:hover {
+            background-color: lighten($clr-pri-1, 25%);
+            opacity: 40%;
+        }
     }
     &--home {
         background-image: $clr-pri-grd;
         padding: pxl(15) pxl(38.5);
+        &:hover {
+            background-image: linear-gradient(lighten(#ff6f48, 15%),lighten(#f02aa6, 15%));
+        }
         @include min-width($dw-desktop) {
             padding: pxl(17.5) pxl(33);
         }
     }
     &--footer {
         background-image: $clr-sec-grd;
+        &:hover {
+            background-image: linear-gradient(lighten(#4851ff, 15%),lighten(#f02aa6, 15%));
+        }
     }
 }
 
@@ -136,12 +152,12 @@ main {
         margin-bottom: pxl(172);
     }
 
-    .logo {
-        //
-        &--header {
-            //
-        }
-    }
+    // .logo {
+    //     //
+    //     &--header {
+    //         //
+    //     }
+    // }
 }
 
 .home {

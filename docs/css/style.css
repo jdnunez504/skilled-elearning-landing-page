@@ -188,6 +188,7 @@ main {
   main {
     margin: 0 auto;
     max-width: 1440px;
+    overflow: hidden;
   }
 }
 
@@ -195,6 +196,8 @@ main {
   display: inline-block;
   padding: 11px 25px;
   border-radius: 36px;
+  cursor: pointer;
+  transition: all 0.5s;
   z-index: 1;
 }
 @media screen and (min-width: 68.75rem) {
@@ -208,9 +211,16 @@ main {
 .Btn--header {
   background-color: #13183f;
 }
+.Btn--header:hover {
+  background-color: #313da1;
+  opacity: 40%;
+}
 .Btn--home {
   background-image: linear-gradient(#ff6f48, #f02aa6);
   padding: 15px 38.5px;
+}
+.Btn--home:hover {
+  background-image: linear-gradient(#ffab95, #f571c4);
 }
 @media screen and (min-width: 68.75rem) {
   .Btn--home {
@@ -219,6 +229,9 @@ main {
 }
 .Btn--footer {
   background-image: linear-gradient(#4851ff, #f02aa6);
+}
+.Btn--footer:hover {
+  background-image: linear-gradient(#959aff, #f571c4);
 }
 
 .icon {
@@ -275,6 +288,7 @@ main {
     margin-bottom: 172px;
   }
 }
+
 .home {
   display: flex;
   flex-direction: column;
